@@ -1,2 +1,2 @@
-[![yergu](https://circleci.com/<VCS>/yergu/MobApp.svg?style=svg)](https://https://app.circleci.com/pipelines/github/yergu/MobApp)
+[![yergu](https://circleci.com/<VCS>/yergu/MobApp.svg?style=svg)](https://app.circleci.com/pipelines/github/yergu/MobApp)
 [![codecov](https://codecov.io/gh/yergu/MobApp/branch/master/graph/badge.svg?token=G3AIP33QLR)](https://codecov.io/gh/yergu/MobApp)
