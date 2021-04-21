@@ -18,8 +18,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Signup Form"
-            android:layout_centerHorizontal="true"
+            android:hint="SIGNUP FORM"
+            android:layout_gravity="center"
+
             android:id="@+id/signupForm"
             android:textSize="20sp"
             android:gravity="start"
