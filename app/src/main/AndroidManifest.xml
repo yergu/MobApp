@@ -13,12 +13,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidApp_Development" >
-        <activity
+     <!--   <activity
             android:name=".result"
             android:parentActivityName=".signup"
             android:label="@string/title_activity_result"
             android:theme="@style/Theme.AndroidApp_Development.NoActionBar">
-           </activity>
+           </activity> -->
+        //add back
+        <activity
+            android:name=".result"
+            android:parentActivityName=".signup">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".signup" />
+        </activity>
 
         <activity android:name=".signup">
 
@@ -37,6 +46,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
     </application>
 
 </manifest>
