@@ -37,7 +37,7 @@ public class signup extends AppCompatActivity {
     EditText et_fName, et_lName,et_email,et_desc, et_occu;
     TextView textView;
 
-    public static final String ExtraName = "com.example.androidapp_development.Extraname";
+   // public static final String ExtraName = "com.example.androidapp_development.Extraname";
     @TargetApi(Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +49,8 @@ public class signup extends AppCompatActivity {
         et_lName =findViewById(R.id.lname);
         et_fName=findViewById(R.id.fname);
         datePick=(Button)findViewById(R.id.datePickerButton);
+        et_desc=findViewById(R.id.description);
+        et_occu=findViewById(R.id.occupation);
         AwesomeValidation awesomeValidation;
         //set currentdate
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z");
@@ -61,8 +63,10 @@ public class signup extends AppCompatActivity {
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
         //validation add
         awesomeValidation.addValidation(this,R.id.fname, RegexTemplate.NOT_EMPTY,R.string.invalid_name);
+        //adding validation to firstname invalid char
+        awesomeValidation.addValidation(this, R.id.fname, "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.invalid_name);
         awesomeValidation.addValidation(this,R.id.lname, RegexTemplate.NOT_EMPTY,R.string.invalid_name);
-
+        awesomeValidation.addValidation(this, R.id.lname, "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.invalid_name);
         awesomeValidation.addValidation(this, R.id.email, Patterns.EMAIL_ADDRESS, R.string.errormessge);
         awesomeValidation.addValidation(this, R.id.description,  RegexTemplate.NOT_EMPTY,R.string.invalid_name);
         awesomeValidation.addValidation(this, R.id.occupation,  RegexTemplate.NOT_EMPTY,R.string.invalid_name);
@@ -134,41 +138,13 @@ public class signup extends AppCompatActivity {
         return month + "/ " + day + "/ " + year;
     }
 
-    private String getMonthFormat(int month)
-    {
-        if(month == 1)
-            return "JAN";
-        if(month == 2)
-            return "FEB";
-        if(month == 3)
-            return "MAR";
-        if(month == 4)
-            return "APR";
-        if(month == 5)
-            return "MAY";
-        if(month == 6)
-            return "JUN";
-        if(month == 7)
-            return "JUL";
-        if(month == 8)
-            return "AUG";
-        if(month == 9)
-            return "SEP";
-        if(month == 10)
-            return "OCT";
-        if(month == 11)
-            return "NOV";
-        if(month == 12)
-            return "DEC";
 
-        //default should never happen
-        return "JAN";
-    }
 
     public void openDatePicker(View view)
     {
         datePickerDialog.show();
     }
+
 
 
     private void openResultActivity() {
@@ -179,29 +155,25 @@ public class signup extends AppCompatActivity {
         intent.putExtra("fn", username);
 
 //pass last name
-        EditText lastName = (EditText) findViewById(R.id.lname);
-        String userlname = lastName.getText().toString();
-        Intent intent2 = new Intent(this, result.class);
-        intent2.putExtra("ln", userlname);
-
-
         //Description
         EditText desc = (EditText) findViewById(R.id.description);
         String usesrDescription = desc.getText().toString();
-        Intent intent_desc = new Intent(this, result.class);
-        intent_desc.putExtra("des", usesrDescription);
+       intent.putExtra("des", usesrDescription);
 
 
-        //Description
+        //Occupation
         EditText occ = (EditText) findViewById(R.id.occupation);
-        String userOccupation  = desc.getText().toString();
-        Intent intent_Occ = new Intent(this, result.class);
-        intent_desc.putExtra("oc", userOccupation);
+        String userOccupation  = occ.getText().toString();
+        intent.putExtra("oc", userOccupation);
+
+        //email
+        EditText emailadd = (EditText) findViewById(R.id.email);
+        String em_add  = emailadd.getText().toString();
+        intent.putExtra("em", em_add);
 
         @SuppressLint("WrongViewCast") Button age =findViewById((R.id.datePickerButton));
         String  birthDate= age.getText().toString();
-        Intent intentAge =new Intent(this, result.class);
-        intentAge.putExtra("ag", birthDate);
+             intent.putExtra("ag", birthDate);
 
         startActivity(intent);
     }

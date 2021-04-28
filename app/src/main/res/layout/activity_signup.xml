@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".signup">
+    tools:context="com.example.androidapp_development.signup">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginLeft="16sp"
+
         android:layout_marginRight="16sp"
+        android:textStyle="bold"
 
         android:backgroundTint="@color/material_on_background_emphasis_high_type"
         android:layout_centerInParent="true">
@@ -71,7 +73,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:hint="Description"
-            android:inputType="textShortMessage"
+            android:inputType=
+                "textCapSentences|textAutoCorrect|textMultiLine"
             android:padding="10dp"
             android:textColor="@color/teal_700"
             android:textSize="20sp" />
@@ -104,7 +107,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Select Date"
+            android:text="Select BirthDate"
             android:gravity="center"
             android:textSize="20sp"
 
@@ -112,6 +115,7 @@
             android:layout_marginTop="10dp"
             android:layout_below="@+id/email"
             android:layout_toEndOf="@+id/textView"
+            android:backgroundTint="@color/purple_500"
 
             android:onClick="openDatePicker"/>
 
@@ -159,5 +163,4 @@
 
         </TextView>
     </LinearLayout>
-
-</RelativeLayout>
+   </ScrollView>
