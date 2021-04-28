@@ -36,7 +36,7 @@ public class signupTest {
         //test if the signup button click it will go to the result activity page
 
         onView(withId(R.id.signup)).perform(click());
-        // check hint visibility after the text is cleared
+
 
     }
 

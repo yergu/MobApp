@@ -1,35 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".signup">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginLeft="16sp"
         android:layout_marginRight="16sp"
-        android:textColor="@color/teal_700"
+
+        android:backgroundTint="@color/material_on_background_emphasis_high_type"
         android:layout_centerInParent="true">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="SIGNUP FORM"
-            android:layout_gravity="center"
-
             android:id="@+id/signupForm"
-            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:fontFamily="cursive"
             android:gravity="start"
+            android:text="Meet a new People"
             android:padding="10dp"
+
             android:textColor="@color/teal_700"
+            android:textSize="30sp"
 
             />
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="253dp"
+            android:visibility="visible"
+            app:srcCompat="@drawable/cat" />
 
         <EditText
             android:layout_width="match_parent"
@@ -46,8 +57,29 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Last Name"
-            android:id="@+id/Lname"
+            android:hint="LastName"
+            android:id="@+id/lname"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="@color/teal_700"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="Description"
+            android:inputType="textShortMessage"
+            android:padding="10dp"
+            android:textColor="@color/teal_700"
+            android:textSize="20sp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Occupation"
+            android:id="@+id/occupation"
             android:textSize="20sp"
             android:gravity="center"
             android:padding="10dp"
@@ -64,16 +96,7 @@
             android:padding="10dp"
             android:textColor="@color/teal_700"
             />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Select Date "
-            android:id="@+id/textView"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:padding="10dp"
-            android:textColor="@color/teal_700"
-            />
+
 
 
         <Button
@@ -81,25 +104,31 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="JAN 01 2020"
+            android:text="Select Date"
             android:gravity="center"
             android:textSize="20sp"
-            android:textColor="@color/black"
+
             style="?android:spinnerStyle"
             android:layout_marginTop="10dp"
-            android:backgroundTint="@color/teal_700"
+            android:layout_below="@+id/email"
+            android:layout_toEndOf="@+id/textView"
+
             android:onClick="openDatePicker"/>
+
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign Up"
-            android:backgroundTint="@color/teal_700"
-            android:textSize="20sp"
-
+            android:id="@+id/signup"
             android:gravity="center"
+            android:layout_gravity="center"
+            android:backgroundTint="@android:color/holo_blue_dark"
 
-            android:textColor="#fff"
-            android:id="@+id/signup"/>
+            android:paddingHorizontal="20dp"
+
+
+            android:text="Sign Up"
+
+            android:textSize="20sp" />
         />
 
 
@@ -114,6 +143,7 @@
             android:gravity="end"
             android:padding="10dp"
             android:textColor="@color/teal_700"
+            android:visibility="invisible"
 
             />
         <TextView
@@ -124,9 +154,10 @@
             android:textStyle="normal"
             android:gravity="right"
             android:padding="10dp"
+            android:visibility="invisible"
             android:textColor="@color/teal_700">
 
         </TextView>
     </LinearLayout>
-    </ScrollView>
+
 </RelativeLayout>

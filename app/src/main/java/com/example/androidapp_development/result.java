@@ -20,9 +20,32 @@ public class result extends AppCompatActivity {
 
 
                 Intent intent =getIntent();
-                String name=intent.getStringExtra(signup.ExtraName);
-                TextView textname = (TextView) findViewById(R.id.fname2);
-                textname.setText("Thanks for Signing Up " + name+"!");
+                String name=intent.getStringExtra("fn");
+
+
+                Intent intentl=getIntent();
+                        String l_name= intentl.getStringExtra("ln");
+
+
+        Intent intent3=getIntent();
+        String D_name= intent3.getStringExtra("des");
+
+        Intent intent4=getIntent();
+        String Occup= intent3.getStringExtra("oc");
+
+
+        Intent intent5=getIntent();
+        String age_1= intent3.getStringExtra("ag");
+
+
+        TextView textname = (TextView) findViewById(R.id.fname2);
+
+
+
+
+
+
+                textname.setText("Name "+name+" "+l_name+"/n");
             }
 
 }

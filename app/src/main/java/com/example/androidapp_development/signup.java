@@ -2,6 +2,7 @@ package com.example.androidapp_development;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
@@ -27,12 +28,13 @@ import java.util.Date;
 
 
 public class signup extends AppCompatActivity {
-    private Button button;
+    private Button button, datePick;
+
 
 //for date picker
     private DatePickerDialog datePickerDialog;
     private Button dateButton;
-    EditText et_fName, et_lName,et_email;
+    EditText et_fName, et_lName,et_email,et_desc, et_occu;
     TextView textView;
 
     public static final String ExtraName = "com.example.androidapp_development.Extraname";
@@ -44,8 +46,9 @@ public class signup extends AppCompatActivity {
         //Assign variable
         textView=findViewById(R.id.date);
         et_email=findViewById(R.id.email);
-        et_lName =findViewById(R.id.Lname);
+        et_lName =findViewById(R.id.lname);
         et_fName=findViewById(R.id.fname);
+        datePick=(Button)findViewById(R.id.datePickerButton);
         AwesomeValidation awesomeValidation;
         //set currentdate
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z");
@@ -58,9 +61,12 @@ public class signup extends AppCompatActivity {
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
         //validation add
         awesomeValidation.addValidation(this,R.id.fname, RegexTemplate.NOT_EMPTY,R.string.invalid_name);
-        awesomeValidation.addValidation(this,R.id.Lname, RegexTemplate.NOT_EMPTY,R.string.invalid_name);
+        awesomeValidation.addValidation(this,R.id.lname, RegexTemplate.NOT_EMPTY,R.string.invalid_name);
 
         awesomeValidation.addValidation(this, R.id.email, Patterns.EMAIL_ADDRESS, R.string.errormessge);
+        awesomeValidation.addValidation(this, R.id.description,  RegexTemplate.NOT_EMPTY,R.string.invalid_name);
+        awesomeValidation.addValidation(this, R.id.occupation,  RegexTemplate.NOT_EMPTY,R.string.invalid_name);
+
 
 
         button.setOnClickListener(new View.OnClickListener()
@@ -166,10 +172,37 @@ public class signup extends AppCompatActivity {
 
 
     private void openResultActivity() {
+        //Pass fIrst name
         EditText firstName = (EditText) findViewById(R.id.fname);
         String username = firstName.getText().toString();
         Intent intent = new Intent(this, result.class);
-        intent.putExtra(ExtraName, username);
+        intent.putExtra("fn", username);
+
+//pass last name
+        EditText lastName = (EditText) findViewById(R.id.lname);
+        String userlname = lastName.getText().toString();
+        Intent intent2 = new Intent(this, result.class);
+        intent2.putExtra("ln", userlname);
+
+
+        //Description
+        EditText desc = (EditText) findViewById(R.id.description);
+        String usesrDescription = desc.getText().toString();
+        Intent intent_desc = new Intent(this, result.class);
+        intent_desc.putExtra("des", usesrDescription);
+
+
+        //Description
+        EditText occ = (EditText) findViewById(R.id.occupation);
+        String userOccupation  = desc.getText().toString();
+        Intent intent_Occ = new Intent(this, result.class);
+        intent_desc.putExtra("oc", userOccupation);
+
+        @SuppressLint("WrongViewCast") Button age =findViewById((R.id.datePickerButton));
+        String  birthDate= age.getText().toString();
+        Intent intentAge =new Intent(this, result.class);
+        intentAge.putExtra("ag", birthDate);
+
         startActivity(intent);
     }
 
