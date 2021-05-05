@@ -16,6 +16,8 @@ import org.w3c.dom.Text;
 
 public class result extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,4 +64,7 @@ public class result extends AppCompatActivity {
             }
         });
     }
+
+
+
 }

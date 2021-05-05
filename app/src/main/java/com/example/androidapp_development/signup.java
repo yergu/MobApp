@@ -1,7 +1,8 @@
 package com.example.androidapp_development;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.widget.Toolbar;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
@@ -15,12 +16,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+
+
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.basgeekball.awesomevalidation.utility.RegexTemplate;
+import com.google.android.material.tabs.TabLayout;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -28,6 +34,9 @@ import java.util.Date;
 
 
 public class signup extends AppCompatActivity {
+    private Toolbar toolbar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
     private Button button, datePick;
 
 
@@ -43,6 +52,13 @@ public class signup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+        //Tab
+        toolbar =(Toolbar) findViewById(R.id.myToolbar);
+        tabLayout=(TabLayout)findViewById(R.id.tablayout);
+        viewPager=(ViewPager)findViewById(R.id.myViewPager) ;
+
+        setSupportActionBar(toolbar);
+
         //Assign variable
         textView=findViewById(R.id.date);
         et_email=findViewById(R.id.email);
@@ -100,6 +116,15 @@ public class signup extends AppCompatActivity {
         dateButton = findViewById(R.id.datePickerButton);
 
     }
+    private void setupViewpager(ViewPager viewPager)
+    {
+        viewPagerAdapter viewpagerAdapter =new viewPagerAdapter(getSupportFragmentManager());
+        viewpagerAdapter.addFragment(new profileFragment(), "PROFILE");
+        viewpagerAdapter.addFragment(new MatchesFragment(), "MATCHES");
+        viewpagerAdapter.addFragment(new SettingFragment(), "Setting");
+        viewPager.setAdapter(viewpagerAdapter);
+    }
+
     private String getTodaysDate()
     {
         Calendar cal = Calendar.getInstance();
