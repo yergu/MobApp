@@ -1,44 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".signup">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/myToolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/cardview_light_background"
-        app:layout_scrollFlags="scroll|enterAlways"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.AppCompat">
         <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tablayout"
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="16sp"
+        android:layout_marginRight="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/material_on_background_emphasis_high_type"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+
+            android:visibility="visible"
+            app:srcCompat="@drawable/cat"
+            android:contentDescription="@string/mydog" />
+
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabIndicatorColor="@android:color/white"
-            app:tabIndicatorHeight="2dp"
-            app:tabMode="fixed"
-            app:tabGravity="fill"
-            />
+            android:hint="@string/firstname"
+            android:id="@+id/fname"
+            android:textSize="20sp"
 
-    </com.google.android.material.appbar.AppBarLayout>
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="@color/teal_700"
+            android:inputType="text"
+            android:autofillHints="" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/lastname"
+            android:id="@+id/lname"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="@color/teal_700"
+            android:inputType="text"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/description"
+            android:inputType=
+                "textCapSentences|textAutoCorrect|textMultiLine"
+            android:padding="10dp"
+            android:textColor="@color/teal_700"
+            android:textSize="20sp"
+            android:autofillHints="" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/occupation"
+            android:id="@+id/occupation"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="@color/teal_700"
+            android:inputType="text"
+            android:autofillHints="" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/email_adress"
+            android:id="@+id/email"
+            android:inputType="textEmailAddress"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="@color/teal_700"
+            android:autofillHints="" />
+
+        <Button
+            android:id="@+id/datePickerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_date"
+            android:gravity="center"
+            android:textSize="20sp"
+            style="?android:spinnerStyle"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/purple_500"
+            android:visibility="invisible"
+            android:onClick="openDatePicker"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/signup"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:paddingHorizontal="20dp"
+            android:visibility="invisible"
+            android:text="@string/sign_up_activity"
+            android:textSize="20sp" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/signupf"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:paddingHorizontal="20dp"
+            android:text="@string/sign_up"
+            android:textSize="20sp" />
+
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/name"
+            android:text="@string/yergalem_mekonnen"
+            android:inputType="text"
+
+            android:textSize="20sp"
+            android:gravity="end"
+            android:padding="10dp"
+            android:textColor="@color/teal_700"
+            android:visibility="invisible"
+
+            android:autofillHints=""
+            tools:ignore="LabelFor" />
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            android:gravity="end"
+            android:padding="10dp"
+            android:visibility="invisible"
+            android:textColor="@color/teal_700">
+
+        </TextView>
+    </LinearLayout>
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/myViewPager"
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-        />
-
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

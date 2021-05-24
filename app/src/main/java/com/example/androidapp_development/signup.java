@@ -1,6 +1,9 @@
+
 package com.example.androidapp_development;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.widget.Toolbar;
 import android.annotation.SuppressLint;
@@ -34,30 +37,42 @@ import java.util.Date;
 
 
 public class signup extends AppCompatActivity {
-    private Toolbar toolbar;
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
-    private Button button, datePick;
+
+    private Button button, datePick,button2;
+    //for passing from Activity to frgment
 
 
-//for date picker
+
+
+    //for date picker
     private DatePickerDialog datePickerDialog;
     private Button dateButton;
+    private int age;
     EditText et_fName, et_lName,et_email,et_desc, et_occu;
     TextView textView;
+    private FragmentManager manager;
 
-   // public static final String ExtraName = "com.example.androidapp_development.Extraname";
+     public static final String ExtraName = "com.example.androidapp_development.Extraname";
     @TargetApi(Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        //Tab
-        toolbar =(Toolbar) findViewById(R.id.myToolbar);
-        tabLayout=(TabLayout)findViewById(R.id.tablayout);
-        viewPager=(ViewPager)findViewById(R.id.myViewPager) ;
 
-        setSupportActionBar(toolbar);
+        //For Tab
+
+        myPagerAdapter myPagerAdapter = new myPagerAdapter(this,getSupportFragmentManager());
+        ViewPager viewPager =findViewById(R.id.view_pager);
+        viewPager.setAdapter(myPagerAdapter);
+        TabLayout tabs = findViewById(R.id.tabs);
+        tabs.setupWithViewPager(viewPager);
+
+        //End of Tab
+        //Passing profile data to activity to profile Fragment
+
+
+
+        //End profile Faragment
 
         //Assign variable
         textView=findViewById(R.id.date);
@@ -74,6 +89,7 @@ public class signup extends AppCompatActivity {
         textView.setText(currentDateandTime);
 
         button = (Button) findViewById(R.id.signup);
+        button=(Button)findViewById(R.id.signupf) ;
         //Initalize valadation
 
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
@@ -88,9 +104,31 @@ public class signup extends AppCompatActivity {
         awesomeValidation.addValidation(this, R.id.occupation,  RegexTemplate.NOT_EMPTY,R.string.invalid_name);
 
 
+        //on click bent send datas to fragment
 
-        button.setOnClickListener(new View.OnClickListener()
+button2.setOnClickListener(new View.OnClickListener()
+{
+    @Override
+ public void onClick(View view)
+    {
+        if(awesomeValidation.validate()) {
+            sendDataToFragment();
+        }
+        else
         {
+            Toast t = Toast.makeText(getApplicationContext(),
+                    "This a positioned toast message",
+                    Toast.LENGTH_LONG);
+
+            t.setGravity(Gravity.BOTTOM | Gravity.RIGHT,0,0);
+            t.show();
+        }
+    }
+});
+//send data to result activity
+
+button.setOnClickListener(new View.OnClickListener()
+ {
             @Override
             public void onClick(View view)
             {
@@ -98,32 +136,56 @@ public class signup extends AppCompatActivity {
                     //on success
                     openResultActivity();
                 }
-                else {
+                else
+                    {
                     Toast t = Toast.makeText(getApplicationContext(),
                             "This a positioned toast message",
                             Toast.LENGTH_LONG);
 
                     t.setGravity(Gravity.BOTTOM | Gravity.RIGHT,0,0);
                     t.show();
-
-                }
+                  }
 
             }
-        });
+  });
 
 
         initDatePicker();
         dateButton = findViewById(R.id.datePickerButton);
 
     }
-    private void setupViewpager(ViewPager viewPager)
-    {
-        viewPagerAdapter viewpagerAdapter =new viewPagerAdapter(getSupportFragmentManager());
-        viewpagerAdapter.addFragment(new profileFragment(), "PROFILE");
-        viewpagerAdapter.addFragment(new MatchesFragment(), "MATCHES");
-        viewpagerAdapter.addFragment(new SettingFragment(), "Setting");
-        viewPager.setAdapter(viewpagerAdapter);
-    }
+
+//method to pass data to profile mgt
+public void sendDataToFragment() {
+    //Pass fIrst name
+    EditText firstName = findViewById(R.id.fname);
+    String username = firstName.getText().toString();
+//pass last name
+    //Description
+    EditText desc = findViewById(R.id.description);
+    String usesrDescription = desc.getText().toString();
+
+    //Occupation
+    EditText occ = findViewById(R.id.occupation);
+    String userOccupation  = occ.getText().toString();
+    //email
+    EditText emailadd = findViewById(R.id.email);
+    String em_add  = emailadd.getText().toString();
+
+    Bundle args= new Bundle();
+
+    args.putString("Name",usesrDescription);
+    args.putString("Description ",usesrDescription);
+    args.putString("Occcupation ",userOccupation);
+    args.putString("Email ",em_add);
+    //PASS OVER THE BUNDLE TO OUR FRAGMENT
+    profileFragment fragment = new profileFragment();
+    fragment.setArguments(args);
+    //THEN NOW SHOW OUR FRAGMENT
+    getSupportFragmentManager().beginTransaction().replace(R.id.container,fragment).commit();
+
+
+}
 
     private String getTodaysDate()
     {
@@ -145,6 +207,7 @@ public class signup extends AppCompatActivity {
                 String date = makeDateString(day, month, year);
                 dateButton.setText(date);
 
+
             }
         };
 
@@ -163,42 +226,39 @@ public class signup extends AppCompatActivity {
         return month + "/ " + day + "/ " + year;
     }
 
-
-
     public void openDatePicker(View view)
     {
         datePickerDialog.show();
     }
-
-
-
     private void openResultActivity() {
         //Pass fIrst name
-        EditText firstName = (EditText) findViewById(R.id.fname);
+        EditText firstName = findViewById(R.id.fname);
         String username = firstName.getText().toString();
         Intent intent = new Intent(this, result.class);
         intent.putExtra("fn", username);
 
 //pass last name
         //Description
-        EditText desc = (EditText) findViewById(R.id.description);
+        EditText desc = (EditText)findViewById(R.id.description);
         String usesrDescription = desc.getText().toString();
-       intent.putExtra("des", usesrDescription);
-
+        intent.putExtra("des", usesrDescription);
 
         //Occupation
-        EditText occ = (EditText) findViewById(R.id.occupation);
+        EditText occ =  (EditText) findViewById(R.id.occupation);
         String userOccupation  = occ.getText().toString();
         intent.putExtra("oc", userOccupation);
 
         //email
-        EditText emailadd = (EditText) findViewById(R.id.email);
+        EditText emailadd =  (EditText) findViewById(R.id.email);
         String em_add  = emailadd.getText().toString();
         intent.putExtra("em", em_add);
 
         @SuppressLint("WrongViewCast") Button age =findViewById((R.id.datePickerButton));
         String  birthDate= age.getText().toString();
-             intent.putExtra("ag", birthDate);
+
+        Intent intentAge =new Intent(this, result.class);
+        intentAge.putExtra("ag", birthDate);
+        intent.putExtra("ag", birthDate);
 
         startActivity(intent);
     }

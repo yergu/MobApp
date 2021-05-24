@@ -1,3 +1,9 @@
 <resources>
-    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="imgHeight520dp">imgHeight520dp</dimen>
+    <dimen name="size25sp">size25sp</dimen>
+    <dimen name="marginTop10">marginTop10</dimen>
+    <dimen name="size26sp">size26sp</dimen>
+    <dimen name="size18sp">size18sp</dimen>
+    <dimen name="size26">26sp</dimen>
+    <dimen name="hight20dp">20dp</dimen>
 </resources>
