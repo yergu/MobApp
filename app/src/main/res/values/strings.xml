@@ -50,6 +50,7 @@
     <string name="occupation">Occupation</string>
     <string name="title_activity_assignment4">title</string>
     <string name="profileimage">profileimage</string>
+    <string name="mainfragment">MainFragment</string>
 
 
 </resources>
