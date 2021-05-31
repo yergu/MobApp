@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndroidApp_Development</string>
+    <string name="app_name">Dating Application</string>
     <string name="hellow_World">Hello World!</string>
     <string name="birthdate">BirthDate</string>
     <string name="title_activity_result">result</string>
@@ -19,15 +19,14 @@
     <string name="setting">Setting</string>
     <string name="firstname">FirstName</string>
     <string name="lastname">LastName</string>
-    <string name="description">Description</string>
-    <string name="occupation">Occupation</string>
+
     <string name="email_adress">Email Address</string>
     <string name="yergalem_mekonnen">Yergalem Mekonnen</string>
     <string name="my_profile_image">my Profile Image</string>
     <string name="profile">profile</string>
     <string name="matches">matches</string>
     <string name="my_profile">My Profile</string>
-    <string name="sign_up">Sign Up</string>
+
     <string name="select_date">Select Date</string>
 
     <string name="meet_a_new_people">Meet a new People</string>
@@ -43,7 +42,14 @@
     <string name="LIKE">Like</string>
     <string name="firstnmae">\"Name : \"</string>
     <string name="age">Age:</string>
-
+    <string name="title_activity_signup_ass4">signupActivity_ass4</string>
+    <string name="names">Name</string>
+    <string name="age2">Age</string>
+    <string name="description">Description</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="occupation">Occupation</string>
+    <string name="title_activity_assignment4">title</string>
+    <string name="profileimage">profileimage</string>
 
 
 </resources>

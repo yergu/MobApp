@@ -1,4 +1,6 @@
 <resources>
 
 
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="appbar_padding">appbar_padding</dimen>
 </resources>
