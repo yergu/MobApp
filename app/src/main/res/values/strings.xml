@@ -68,6 +68,7 @@
     <string name="age_2">Age:</string>
     <string name="occupation_OCC2">Occupation:</string>
     <string name="bac_Back">back</string>
+    <string name="EmailAdress">Email</string>
 
 
 </resources>
