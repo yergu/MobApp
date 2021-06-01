@@ -1,7 +1,5 @@
 package com.example.androidapp_development.assignment3;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -9,12 +7,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.androidapp_development.R;
 
 public class signup3Activity extends AppCompatActivity {
 
     private EditText nameField, ageField, descriptionField, occupationField;
     private Button signupBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,11 +26,14 @@ public class signup3Activity extends AppCompatActivity {
         ageField = (EditText) findViewById(R.id.age);
         occupationField = (EditText) findViewById(R.id.occupation);
         signupBtn = (Button) findViewById(R.id.create_profile);
+       // ImageView imageView =(ImageView)findViewById(R.id.profile_image);
+
         signupBtn.setOnClickListener(view->{
             String name = nameField.getText().toString();
             String description = descriptionField.getText().toString();
             String age = ageField.getText().toString();
             String occupation = occupationField.getText().toString();
+
             if(age != null && !age.isEmpty()){
                 if(Integer.parseInt(age) < 18){
                     ageField.setTextColor(Color.parseColor("red"));
@@ -41,6 +45,7 @@ public class signup3Activity extends AppCompatActivity {
                     intent.putExtra("description", description);
                     intent.putExtra("occupation", occupation);
                     intent.putExtra("age", age);
+                    intent.putExtra("picId", R.drawable.cat);
                     startActivity(intent);
                     nameField.setText("");
                     ageField.setText("");

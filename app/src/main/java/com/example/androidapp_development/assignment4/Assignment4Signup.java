@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +25,7 @@ public class Assignment4Signup extends AppCompatActivity {
         descriptionField = (EditText) findViewById(R.id.description);
         ageField = (EditText) findViewById(R.id.age);
         occupationField = (EditText) findViewById(R.id.occupation);
+        ImageView profileImageView = findViewById(R.id.profile_image);
         signupBtn = (Button) findViewById(R.id.create_profile);
         signupBtn.setOnClickListener(view->{
             String name = nameField.getText().toString();
@@ -41,6 +43,7 @@ public class Assignment4Signup extends AppCompatActivity {
                     intent.putExtra("description", description);
                     intent.putExtra("occupation", occupation);
                     intent.putExtra("age", age);
+                    intent.putExtra("picId", R.drawable.cat);
 
                    // Bundle img = getIntent().getExtras();
                   //int imgID = img.getInt("profImage");

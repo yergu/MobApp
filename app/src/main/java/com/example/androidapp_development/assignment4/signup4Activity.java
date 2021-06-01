@@ -1,6 +1,7 @@
 package com.example.androidapp_development.assignment4;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -15,7 +16,7 @@ import com.google.android.material.tabs.TabLayout;
 public class signup4Activity extends AppCompatActivity {
 
     private ActivityAssignment4Binding binding;
-
+    ImageView profileImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,8 @@ public class signup4Activity extends AppCompatActivity {
         String description = getIntent().getStringExtra("description");
         String occupation = getIntent().getStringExtra("occupation");
         String age = getIntent().getStringExtra("age");
+        Bundle bundle =getIntent().getExtras();
+        int resid = bundle.getInt("picId");
         ProfileModel profileModel = new ProfileModel(name, description,age,occupation);
         binding = ActivityAssignment4Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

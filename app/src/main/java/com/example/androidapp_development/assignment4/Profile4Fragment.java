@@ -20,6 +20,8 @@ import com.example.androidapp_development.assignment4.ui.main.ProfileModel;
  */
 public class Profile4Fragment extends Fragment {
     String name, description, age, occupation;
+    Bundle args;
+
     public Profile4Fragment() {
         // Required empty public constructor
     }
@@ -38,6 +40,8 @@ public class Profile4Fragment extends Fragment {
         args.putString("age", profileModel.getAge());
         args.putString("occupation", profileModel.getOccupation());
         args.putString("occupation", profileModel.getOccupation());
+        args.putInt("picId", R.drawable.cat);
+
 
         fragment.setArguments(args);
         return fragment;
@@ -46,11 +50,15 @@ public class Profile4Fragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Bundle args = getArguments();
+        args = getArguments();
         name = args.getString("name", "No name");
         description = args.getString("description", "No description");
         age = args.getString("age", "not provided");
         occupation = args.getString("occupation", "Not provided");
+       // int resid = args.getInt("picId");
+
+       //
+
     }
 
     @Override
@@ -69,6 +77,8 @@ public class Profile4Fragment extends Fragment {
         descriptionView.setText(description);
         occupationView.setText(occupation);
         ageView.setText(age+" years");
+        profileImageView.setImageResource(args.getInt("picId"));
+
 
         backBtn.setOnClickListener(view1->{
             getActivity().finish();
