@@ -1,7 +1,5 @@
 package com.example.androidapp_development.assignment5;
 
-import android.graphics.drawable.Drawable;
-
 public class Model2 {
     private String name;
     private int image;

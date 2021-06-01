@@ -5,18 +5,17 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.androidapp_development.R;
-import com.google.firebase.database.annotations.NotNull;
 
+import org.jetbrains.annotations.NotNull;
 
 public class MatchCardViewHolder extends RecyclerView.ViewHolder {
     private TextView matchNameView;
     private ImageView matchImageView;
     private ImageButton likeButton;
-    public MatchCardViewHolder(@NonNull @NotNull View itemView) {
+    public MatchCardViewHolder(@NotNull View itemView) {
         super(itemView);
         matchNameView = itemView.findViewById(R.id.match_name);
         matchImageView = itemView.findViewById(R.id.match_image);

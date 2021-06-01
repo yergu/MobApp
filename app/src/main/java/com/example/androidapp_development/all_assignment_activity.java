@@ -18,9 +18,7 @@ public class all_assignment_activity extends AppCompatActivity {
         findViewById(R.id.assignment2).setOnClickListener(view -> {
             startActivity(new Intent(all_assignment_activity.this, signup2MainActivity.class));
         });
-        findViewById(R.id.assignment3).setOnClickListener(view -> {
-            startActivity(new Intent(all_assignment_activity.this, signup3Activity.class));
-        });
+        findViewById(R.id.assignment3).setOnClickListener(view -> startActivity(new Intent(all_assignment_activity.this, signup3Activity.class)));
 
         findViewById(R.id.assignment4).setOnClickListener(view -> {
             startActivity(new Intent(all_assignment_activity.this, Assignment4Signup.class));

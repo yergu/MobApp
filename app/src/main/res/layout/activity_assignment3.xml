@@ -25,7 +25,7 @@
             android:layout_height="146dp"
             android:layout_marginTop="10dp"
             app:srcCompat="@drawable/cat"
-            android:contentDescription="@string/profileimage" />
+            android:contentDescription="@string/profile_picture" />
 
         <TextView
             android:id="@+id/thankYouTextView"
@@ -50,18 +50,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/names"
-                android:inputType="textPersonName"
-                android:autofillHints="" />
+                android:hint="@string/Fname"
+                android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/age2"
-                android:inputType="number"
-                android:autofillHints="" />
+                android:hint="@string/ages"
+                android:inputType="number" />
 
             <EditText
                 android:id="@+id/description"
@@ -70,8 +68,7 @@
                 android:ems="10"
                 android:hint="@string/description"
                 android:inputType="textMultiLine"
-                android:lines="4"
-                android:autofillHints="" />
+                android:lines="4" />
 
             <EditText
                 android:id="@+id/occupation"
@@ -79,8 +76,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/occupation"
-                android:inputType="textAutoCorrect"
-                android:autofillHints="" />
+                android:inputType="textAutoCorrect" />
 
             <Button
                 android:id="@+id/create_profile"

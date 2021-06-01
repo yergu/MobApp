@@ -75,12 +75,11 @@ public class Matches5Fragment extends Fragment {
     private List<Model2> generateMatches(Context context){
         return Arrays.asList(
 
-                new Model2("yergu Teferi", R.drawable.pic1),
                 new Model2("Tirsit Endale", R.drawable.pic2),
-                new Model2("Chuchu Endale",R.drawable.pic6),
+                new Model2("Chuchu Endale", R.drawable.pic6),
                 new Model2("Zewde Teshale", R.drawable.pic4),
-                new Model2("Kidist Tuf", R.drawable.pic5),
-                new Model2("Mimiewde Carter",R.drawable.pic1)
+
+                new Model2("Mimiewde Carter", R.drawable.pic1)
         );
     }
 }

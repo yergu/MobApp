@@ -64,7 +64,7 @@ public class Profile4Fragment extends Fragment {
         TextView occupationView = view.findViewById(R.id.profile_occupation);
         ImageView profileImageView = view.findViewById(R.id.profile_image);
         Button backBtn = view.findViewById(R.id.profile_backBtn);
-
+       // profileImageView.setImageDrawable(AppCompatResources.getDrawable(getContext(), R.mipmap.profile_image_round));
         nameView.setText(name);
         descriptionView.setText(description);
         occupationView.setText(occupation);

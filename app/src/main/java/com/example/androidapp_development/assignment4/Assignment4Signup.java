@@ -42,8 +42,8 @@ public class Assignment4Signup extends AppCompatActivity {
                     intent.putExtra("occupation", occupation);
                     intent.putExtra("age", age);
 
-                    // Bundle img = getIntent().getExtras();
-                    //int imgID = img.getInt("profImage");
+                   // Bundle img = getIntent().getExtras();
+                  //int imgID = img.getInt("profImage");
                     startActivity(intent);
                     nameField.setText("");
                     ageField.setText("");

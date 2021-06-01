@@ -19,7 +19,6 @@
     <string name="setting">Setting</string>
     <string name="firstname">FirstName</string>
     <string name="lastname">LastName</string>
-
     <string name="email_adress">Email Address</string>
     <string name="yergalem_mekonnen">Yergalem Mekonnen</string>
     <string name="my_profile_image">my Profile Image</string>
@@ -42,15 +41,33 @@
     <string name="LIKE">Like</string>
     <string name="firstnmae">\"Name : \"</string>
     <string name="age">Age:</string>
-    <string name="title_activity_signup_ass4">signupActivity_ass4</string>
-    <string name="names">Name</string>
-    <string name="age2">Age</string>
+    <string name="title_activity_assignment4">title_activit</string>
+    <string name="title_activity_yergu">yergu</string>
+    <string name="Fname">Name</string>
+    <string name="ages">Age</string>
     <string name="description">Description</string>
-    <string name="sign_up">Sign Up</string>
+    <string name="profile_picture">Profile Picture</string>
     <string name="occupation">Occupation</string>
-    <string name="title_activity_assignment4">title</string>
-    <string name="profileimage">profileimage</string>
-    <string name="mainfragment">MainFragment</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="profile_name2">Profile name</string>
+    <string name="profile_picture21">profile Picture2</string>
+    <string name="description_her">Description here..</string>
+    <string name="_18_yer">18 years</string>
+    <string name="teaching">Teaching</string>
+    <string name="age2">Age:</string>
+    <string name="occupation2">Occupation:</string>
+    <string name="back">back</string>
+    <string name="assignment2">Assignment2</string>
+    <string name="assignment3">Assignment3</string>
+    <string name="assignment_4_amp_5"><![CDATA[Assignment 4 & 5]]></string>
+    <string name="proflepicture">proflePicture</string>
+    <string name="profile_name">Profile name</string>
+    <string name="description_here">Description here..</string>
+    <string name="my_age">My age</string>
+    <string name="occupation_2">Occupation</string>
+    <string name="age_2">Age:</string>
+    <string name="occupation_OCC2">Occupation:</string>
+    <string name="bac_Back">back</string>
 
 
 </resources>

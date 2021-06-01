@@ -9,26 +9,28 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.androidapp_development.R;
-import com.google.firebase.database.annotations.NotNull;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
 public class MatchRecyclerViewAdapter extends RecyclerView.Adapter<MatchCardViewHolder> {
-    private List<Model2> matches;
+    private final List<Model2> matches;
 
     public MatchRecyclerViewAdapter(List<Model2> matches) {
         this.matches = matches;
     }
 
-
+    @NonNull
+    @NotNull
     @Override
-    public MatchCardViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
+    public MatchCardViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
         View layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.matches_card, parent, false);
         return new MatchCardViewHolder(layoutView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MatchCardViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull @NotNull MatchCardViewHolder holder, int position) {
         holder.getMatchNameView().setText(matches.get(position).getName());
         holder.getMatchImageView().setImageResource(matches.get(position).getImage());
         holder.getLikeButton().setOnClickListener(v->{
