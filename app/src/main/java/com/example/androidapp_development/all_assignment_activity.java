@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.androidapp_development.assignment2.signup2MainActivity;
 import com.example.androidapp_development.assignment3.signup3Activity;
 import com.example.androidapp_development.assignment4.Assignment4Signup;
+import com.example.androidapp_development.assignment6.FirestoreUtil;
 
 public class all_assignment_activity extends AppCompatActivity {
 
@@ -26,10 +27,7 @@ public class all_assignment_activity extends AppCompatActivity {
         findViewById(R.id.assignment4).setOnClickListener(view -> {
             startActivity(new Intent(all_assignment_activity.this, Assignment4Signup.class));
         });
-//        if (savedInstanceState == null) {
-//            getSupportFragmentManager().beginTransaction()
-//                    .replace(R.id.container, MainFragment.newInstance())
-//                    .commitNow();
-//        }
+
+        new Thread(()-> FirestoreUtil.initData()).start();
     }
 }

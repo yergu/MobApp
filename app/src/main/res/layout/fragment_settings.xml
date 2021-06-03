@@ -4,23 +4,146 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".assignment4.Settings4Fragment">
+    tools:context=".assignment4.SettingsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="This is where Settings will be"
-            android:textColor="#42109C"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/settings_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:paddingHorizontal="10dp"
+                android:paddingTop="20dp"
+                app:alignmentMode="alignBounds"
+                app:columnCount="2"
+                app:columnOrderPreserved="false"
+                app:useDefaultMargins="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_column="1"
+                    app:layout_row="0">
+
+                    <TextView
+                        android:id="@+id/reminder_time_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingHorizontal="10dp"
+                        android:text="@string/_00_00"
+                        android:textSize="20sp" />
+
+                    <ImageButton
+                        android:id="@+id/editReminderTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="#00FFFFFF"
+                        android:src="@android:drawable/ic_menu_edit"
+                        android:contentDescription="@string/edit" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="225dp"
+                    android:layout_height="52dp"
+                    android:text="@string/daily_matches_reminder_time"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_column="0"
+                    app:layout_row="0" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="225dp"
+                    android:layout_height="43dp"
+                    android:text="@string/gender"
+                    android:textAlignment="textStart"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_column="0"
+                    app:layout_row="2" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="225dp"
+                    android:layout_height="45dp"
+                    android:text="@string/public_account"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_column="0"
+                    app:layout_row="3" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="225dp"
+                    android:layout_height="42dp"
+                    android:text="@string/interested_age_range"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_column="0"
+                    app:layout_row="4" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="225dp"
+                    android:layout_height="52dp"
+                    android:text="@string/max_distance_search"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_column="0"
+                    app:layout_row="1" />
+
+                <Switch
+                    android:id="@+id/togglePublicPrivate"
+                    android:layout_width="132dp"
+                    android:layout_height="52dp"
+                    app:layout_column="1"
+                    app:layout_row="3" />
+
+                <Spinner
+                    android:id="@+id/gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/gender"
+                    android:spinnerMode="dialog"
+                    android:textAlignment="center"
+                    app:layout_column="1"
+                    app:layout_row="2" />
+
+                <Spinner
+                    android:id="@+id/interested_age_range"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/age_ranges"
+                    android:spinnerMode="dialog"
+                    android:textAlignment="center"
+                    app:layout_column="1"
+                    app:layout_row="4" />
+
+                <Spinner
+                    android:id="@+id/search_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/search_distances"
+                    android:spinnerMode="dialog"
+                    android:textAlignment="center"
+                    app:layout_column="1"
+                    app:layout_row="1" />
+
+            </androidx.gridlayout.widget.GridLayout>
+        </androidx.core.widget.NestedScrollView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

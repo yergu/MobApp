@@ -5,6 +5,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.androidapp_development.R;
@@ -15,7 +16,7 @@ public class MatchCardViewHolder extends RecyclerView.ViewHolder {
     private TextView matchNameView;
     private ImageView matchImageView;
     private ImageButton likeButton;
-    public MatchCardViewHolder(@NotNull View itemView) {
+    public MatchCardViewHolder(@NonNull @NotNull View itemView) {
         super(itemView);
         matchNameView = itemView.findViewById(R.id.match_name);
         matchImageView = itemView.findViewById(R.id.match_image);

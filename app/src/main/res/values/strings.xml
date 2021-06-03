@@ -69,6 +69,29 @@
     <string name="occupation_OCC2">Occupation:</string>
     <string name="bac_Back">back</string>
     <string name="EmailAdress">Email</string>
-
+    <string name="daily_matches_reminder_time">Daily Matches Reminder Time</string>
+    <string name="gender">Gender</string>
+    <string name="public_account">Public Account</string>
+    <string name="interested_age_range">Interested Age Range</string>
+    <string name="_00_00">00:00</string>
+    <string name="max_distance_search">Max. Distance Search</string>
+    <string name="edit">edit</string>
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="search_distances">
+        <item>20 miles</item>
+        <item>50 miles</item>
+        <item>100 miles</item>
+        <item>100+ miles</item>
+    </string-array>
+    <string-array name="age_ranges">
+        <item>18–25</item>
+        <item>26–30</item>
+        <item>31–40</item>
+        <item>45+</item>
+    </string-array>
 
 </resources>

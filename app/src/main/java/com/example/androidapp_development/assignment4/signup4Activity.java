@@ -9,7 +9,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.androidapp_development.assignment4.ui.main.ProfileModel;
 import com.example.androidapp_development.assignment4.ui.main.SectionsPagerAdapter;
-import com.example.androidapp_development.assignment5.Matches5Fragment;
+import com.example.androidapp_development.assignment5.MatchesFragment;
 import com.example.androidapp_development.databinding.ActivityAssignment4Binding;
 import com.google.android.material.tabs.TabLayout;
 
@@ -41,7 +41,7 @@ public class signup4Activity extends AppCompatActivity {
     private Fragment[] getFragments(ProfileModel profileModel){
         return new Fragment[]{
                 Profile4Fragment.newInstance(profileModel),
-                Matches5Fragment.newInstance(),
+                MatchesFragment.newInstance(),
                 Settings4Fragment.newInstance()
         };
     }
