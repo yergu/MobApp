@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "549866471936",
+    "project_id": "mobapp-db3cd",
+    "storage_bucket": "mobapp-db3cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:549866471936:android:e15cae81635b97df070ee5",
+        "android_client_info": {
+          "package_name": "com.example.androidapp_development"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "549866471936-4607hjtk016dvosl4qquseestanksv9u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCE4Xxp0JRJB2CB5hstboAMjw3kQwDnGqI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "549866471936-4607hjtk016dvosl4qquseestanksv9u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
