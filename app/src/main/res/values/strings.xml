@@ -1,0 +1,98 @@
+<resources>
+    <string name="app_name">Dating Application</string>
+    <string name="hellow_World">Hello World!</string>
+    <string name="birthdate">BirthDate</string>
+    <string name="title_activity_result">result</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="select_birthdate">Select_Birthdate</string>
+    <string name="errormessge">invalid email address</string>
+    <string name="invalid_name">Name should not be empty</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="match">Match</string>
+    <string name="setting">Setting</string>
+    <string name="firstname">FirstName</string>
+    <string name="lastname">LastName</string>
+    <string name="email_adress">Email Address</string>
+    <string name="yergalem_mekonnen">Yergalem Mekonnen</string>
+    <string name="my_profile_image">my Profile Image</string>
+    <string name="profile">profile</string>
+    <string name="matches">matches</string>
+    <string name="my_profile">My Profile</string>
+
+    <string name="select_date">Select Date</string>
+
+    <string name="meet_a_new_people">Meet a new People</string>
+    <string name="mydog">mydog</string>
+    <string name="tab_Profil">Profile</string>
+    <string name="tab_Matches">Matches</string>
+    <string name="tab_Setting">Setting</string>
+    <string name="sign_up_activity">signup_activity</string>
+    <string name="profile_photo">profilephoto</string>
+    <string name="fName">fname</string>
+    <string name="pictures">pictures</string>
+    <string name="name">name</string>
+    <string name="LIKE">Like</string>
+    <string name="firstnmae">\"Name : \"</string>
+    <string name="age">Age:</string>
+    <string name="title_activity_assignment4">title_activit</string>
+    <string name="title_activity_yergu">yergu</string>
+    <string name="Fname">Name</string>
+    <string name="ages">Age</string>
+    <string name="description">Description</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="occupation">Occupation</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="profile_name2">Profile name</string>
+    <string name="profile_picture21">profile Picture2</string>
+    <string name="description_her">Description here..</string>
+    <string name="_18_yer">18 years</string>
+    <string name="teaching">Teaching</string>
+    <string name="age2">Age:</string>
+    <string name="occupation2">Occupation:</string>
+    <string name="back">back</string>
+    <string name="assignment2">Assignment2</string>
+    <string name="assignment3">Assignment3</string>
+    <string name="assignment_4_amp_5"><![CDATA[Assignment 4 & 5]]></string>
+    <string name="proflepicture">proflePicture</string>
+    <string name="profile_name">Profile name</string>
+    <string name="description_here">Description here..</string>
+    <string name="my_age">My age</string>
+    <string name="occupation_2">Occupation</string>
+    <string name="age_2">Age:</string>
+    <string name="occupation_OCC2">Occupation:</string>
+    <string name="bac_Back">back</string>
+    <string name="EmailAdress">Email</string>
+    <string name="daily_matches_reminder_time">Daily Matches Reminder Time</string>
+    <string name="gender">Gender</string>
+    <string name="public_account">Public Account</string>
+    <string name="interested_age_range">Interested Age Range</string>
+    <string name="_00_00">00:00</string>
+    <string name="max_distance_search">Max. Distance Search</string>
+    <string name="edit">edit</string>
+    <string name="assignment_4_to_8_label">Assignment 4, 5,6,7,8,extra</string>
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="search_distances">
+        <item>20 miles</item>
+        <item>50 miles</item>
+        <item>100 miles</item>
+        <item>100+ miles</item>
+    </string-array>
+    <string-array name="age_ranges">
+        <item>18–25</item>
+        <item>26–30</item>
+        <item>31–40</item>
+        <item>45+</item>
+    </string-array>
+
+</resources>
