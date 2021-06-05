@@ -1,0 +1,43 @@
+package com.example.androidapp_development.assignment6;
+
+import android.content.Context;
+
+import androidx.room.Room;
+
+import java.util.List;
+
+public class SettingsRepository {
+    private static AppDatabase db;
+    private static UserSettings settings;
+
+    public static void init(Context context){
+        db = Room.databaseBuilder(context, AppDatabase.class, "settings-db").build();
+        SettingsDao settingsDao = db.settingsDao();
+        List<UserSettings> settingsList = settingsDao.loadSettings();
+        if(!settingsList.isEmpty()){
+            settings = settingsList.get(0);
+        }
+        else{
+            settings = new UserSettings();
+            settings.setSearchDistance("1000"); // using 1000 miles range by default
+            settings.setReminderTime("00:00"); // all default values
+            settingsDao.insertAll(settings);
+        }
+    }
+
+    public static void updateSettings(UserSettings settings){
+        new Thread(()->{
+            try {
+                SettingsDao settingsDao = db.settingsDao();
+                settingsDao.update(settings);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
+        }).start();
+    }
+
+    public static UserSettings getSettings() {
+        return settings;
+    }
+}
