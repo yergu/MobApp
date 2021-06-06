@@ -26,3 +26,5 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+        // androidx.test
+        def androidx_test = "1.1.0"

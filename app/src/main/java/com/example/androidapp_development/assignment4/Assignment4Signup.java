@@ -1,6 +1,7 @@
 package com.example.androidapp_development.assignment4;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -10,12 +11,16 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.example.androidapp_development.R;
+import com.example.androidapp_development.assignment6.FirestoreUtil;
+import com.example.androidapp_development.assignment6.LocationService;
+import com.example.androidapp_development.assignment6.SettingsRepository;
 
 public class Assignment4Signup extends AppCompatActivity {
 
@@ -86,5 +91,24 @@ public class Assignment4Signup extends AppCompatActivity {
                 Toast.makeText(Assignment4Signup.this,"Please enter your age", Toast.LENGTH_LONG).show();
             }
         });
+        LocationService.init(this);
+        new Thread(()-> {
+            FirestoreUtil.initData();
+            SettingsRepository.init(getApplicationContext());
+        }).start();
+
     }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(requestCode == 0 && grantResults[0]== PackageManager.PERMISSION_GRANTED){
+            LocationService.init(this);
+        }
+
+
+
+    }
+
 }

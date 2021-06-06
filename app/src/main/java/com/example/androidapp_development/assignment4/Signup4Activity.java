@@ -1,13 +1,11 @@
 package com.example.androidapp_development.assignment4;
 
 import android.os.Bundle;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.androidapp_development.R;
 import com.example.androidapp_development.assignment4.ui.main.ProfileModel;
 import com.example.androidapp_development.assignment4.ui.main.SectionsPagerAdapter;
 import com.example.androidapp_development.assignment5.MatchesFragment;

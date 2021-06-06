@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgournd"
+    android:id="@+id/sinaupc"
     tools:context=".assignment3.signup3Activity">
 
     <LinearLayout
