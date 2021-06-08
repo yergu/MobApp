@@ -13,16 +13,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidApp_Development">
         <activity android:name=".assignment4.Signup4Activity" />
-         <activity android:name=".assignment4.Assignment4Signup" >
-            <intent-filter>
+        <activity android:name=".MainActivity" />
+
+         <activity android:name=".assignment4.Assignment4Signup" />
+           <!-- <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+              </activity>
+            -->
         <activity android:name=".assignment3.signup3Activity" />
+
         <activity android:name=".assignment3.Profile3_Activity" />
-        <activity android:name=".All_assignment_activity"/>
+        <activity android:name=".All_assignment_activity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
 
         <activity android:name=".assignment2.result2Activity" />
         <activity android:name=".assignment2.signup2MainActivity" />

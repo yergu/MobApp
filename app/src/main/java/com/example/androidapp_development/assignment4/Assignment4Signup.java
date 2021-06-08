@@ -50,7 +50,7 @@ public class Assignment4Signup extends AppCompatActivity {
             awesomeValidation.addValidation(this, R.id.name, RegexTemplate.NOT_EMPTY, R.string.invalid_name);
             //adding validation to firstname invalid char
             awesomeValidation.addValidation(this, R.id.name, "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.invalid_name);
-            ;
+
             awesomeValidation.addValidation(this, R.id.emailadd, Patterns.EMAIL_ADDRESS, R.string.errormessge);
 
             awesomeValidation.addValidation(this, R.id.description,  RegexTemplate.NOT_EMPTY, R.string.invalid_Description);
@@ -83,8 +83,8 @@ public class Assignment4Signup extends AppCompatActivity {
                     startActivity(intent);
                     nameField.setText("");
                     ageField.setText("");
-                    descriptionField.setText("");
                     occupationField.setText("");
+                    descriptionField.setText("");
                 }
             }
             else {

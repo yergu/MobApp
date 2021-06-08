@@ -20,8 +20,8 @@ import com.example.androidapp_development.R;
 import java.time.LocalDate;
 
 public class signup2MainActivity extends AppCompatActivity {
- private EditText nameField, userDescription, emailField, dobField;
- private Button signupBtn;
+    private EditText nameField, userDescription, emailField, dobField;
+    private Button signupBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +56,7 @@ public class signup2MainActivity extends AppCompatActivity {
             String email = emailField.getText().toString();
             String dob = dobField.getText().toString();
             if(dob != null && !dob.isEmpty())
-              {
+            {
                 String[] dobArr = dob.split("/");
                 LocalDate dateOfBirth = LocalDate.of(Integer.parseInt(dobArr[2]),Integer.parseInt(dobArr[0]), Integer.parseInt(dobArr[1]));
                 if(dateOfBirth.isAfter(LocalDate.now().minusYears(18))){

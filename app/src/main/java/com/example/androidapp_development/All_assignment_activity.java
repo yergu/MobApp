@@ -1,8 +1,11 @@
 package com.example.androidapp_development;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.androidapp_development.assignment2.signup2MainActivity;
 
 public class All_assignment_activity extends AppCompatActivity {
 
@@ -12,20 +15,14 @@ public class All_assignment_activity extends AppCompatActivity {
 
         setContentView(R.layout.all_assignment_activity);
 
-
-    /*     findViewById(R.id.assignment2).setOnClickListener(view -> {
+        findViewById(R.id.assignment2).setOnClickListener(view -> {
             startActivity(new Intent(All_assignment_activity.this, signup2MainActivity.class));
         });
-        findViewById(R.id.assignment3).setOnClickListener(view -> startActivity(new Intent(All_assignment_activity.this, signup3Activity.class)));
+        findViewById(R.id.assignment1).setOnClickListener(view -> startActivity(new Intent(All_assignment_activity.this, MainActivity.class)));
 
-        findViewById(R.id.assignment4).setOnClickListener(view -> {
-            startActivity(new Intent(All_assignment_activity.this, Assignment4Signup.class));
-        });
-        findViewById(R.id.assignment4).setOnClickListener(view -> {
-            startActivity(new Intent(All_assignment_activity.this, Assignment4Signup.class));
-        });
+/*
 
-    /*    LocationService.init(this);
+        LocationService.init(this);
         new Thread(()-> {
             FirestoreUtil.initData();
             SettingsRepository.init(getApplicationContext());
@@ -39,8 +36,8 @@ public class All_assignment_activity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if(requestCode == 0 && grantResults[0]== PackageManager.PERMISSION_GRANTED){
             LocationService.init(this);
-        }
-        */
+        }*/
+
 
     }
 }
