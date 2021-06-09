@@ -8,14 +8,17 @@ public class SettingsViewModel extends ViewModel {
 
     private final MutableLiveData<UserSettings> userSettingsLiveData = new MutableLiveData<>();
 
-    public SettingsViewModel(){
+    public SettingsViewModel()
+    {
         userSettingsLiveData.setValue(SettingsRepository.getSettings());
     }
     public MutableLiveData<UserSettings> getUserSettingsLiveData() {
+
         return userSettingsLiveData;
     }
 
-    public void saveSettings(UserSettings settings){
+    public void saveSettings(UserSettings settings)
+    {
         userSettingsLiveData.setValue(settings);
         SettingsRepository.updateSettings(settings);
     }

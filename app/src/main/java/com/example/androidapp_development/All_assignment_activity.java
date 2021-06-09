@@ -1,15 +1,10 @@
 package com.example.androidapp_development;
 
-import android.content.Intent;
-import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.androidapp_development.assignment2.signup2MainActivity;
 
 public class All_assignment_activity extends AppCompatActivity {
 
-    @Override
+  /*  @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -20,7 +15,7 @@ public class All_assignment_activity extends AppCompatActivity {
         });
         findViewById(R.id.assignment1).setOnClickListener(view -> startActivity(new Intent(All_assignment_activity.this, MainActivity.class)));
 
-/*
+
 
         LocationService.init(this);
         new Thread(()-> {
@@ -39,5 +34,5 @@ public class All_assignment_activity extends AppCompatActivity {
         }*/
 
 
-    }
+    
 }
