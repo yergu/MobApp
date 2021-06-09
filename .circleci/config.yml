@@ -88,7 +88,7 @@ references:
 
 jobs:
 
-  # Build debug APK for unit tests and an instrumented test APK
+  # Build debug APK for unit tests and an instrumented test APK1
 
   build_debug:
     <<: *android_config
